@@ -1,0 +1,21 @@
+
+<img class="img-fluid" src="https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg">
+<div style="padding: 50px">
+  <h1>Reactive Form</h1>
+  <h1>NO CATS!</h1>
+  <p>this is a test of a reactive form</p>
+  <form [formGroup]="theForm" novalidate>
+    <div class="form-group">
+      <label class="center-block">Name:
+        <input class="form-control" formControlName="name">
+      </label>
+    </div>
+  </form>
+  <p>Form value: {{ theForm.value | json }}</p>
+  <div *ngIf="theForm.errors" class="alert alert-danger">
+    <p>do not write cat</p>
+  </div>
+  <p>The form must not have the word cat in it! </p>
+  <p>{{ theForm.status | json }}</p>
+
+</div>
