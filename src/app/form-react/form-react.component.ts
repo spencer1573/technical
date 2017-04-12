@@ -16,7 +16,7 @@ export class FormReactComponent implements OnInit {
 
   createForm() {
     this.theForm = this.fb.group({
-      name: ['', Validators.required ],
+      name: ['', Validators.compose([ Validators.minLength(1), Validators.maxLength(5)])]
     });
   }
   ngOnInit() {

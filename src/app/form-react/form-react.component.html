@@ -4,18 +4,21 @@
   <h1>Reactive Form</h1>
   <h1>NO CATS!</h1>
   <p>this is a test of a reactive form</p>
-  <form [formGroup]="theForm" novalidate>
+  <!--<form [formGroup]="theForm" novalidate>-->
+  <form [formGroup]="theForm">
     <div class="form-group">
       <label class="center-block">Name:
-        <input class="form-control" formControlName="name">
+        <input class="form-control name" id="name" formControlName="name">
       </label>
     </div>
   </form>
   <p>Form value: {{ theForm.value | json }}</p>
-  <div *ngIf="theForm.errors" class="alert alert-danger">
-    <p>do not write cat</p>
-  </div>
+  <!--<div *ngIf="name.hasError('maxlength')" class="alert alert-danger">-->
+    <!--<p>do not write cat</p>-->
+  <!--</div>-->
   <p>The form must not have the word cat in it! </p>
   <p>{{ theForm.status | json }}</p>
+  <p>{{ theForm.get('name').hasError('maxlength') | json }}</p>
+  <!--<p>Object methods: {{ Object.getOwnPropertyNames(theForm) | json }}</p>-->
 
 </div>
